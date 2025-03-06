@@ -20,4 +20,4 @@ jobs:
       - name: run postman tests
         uses: matt-ball/newman-action@master
         with:
-          collection: Component-testing.postman_collection.json
+          collection: https://github.com/Neslihan-Avsar/uek_223-gruppe-4-backend/blob/2bc16a1847e9826dcf78d522bd3baeeeb7c696b7/Component-testing.postman_collection.json
