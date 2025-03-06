@@ -18,6 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run postman tests
-        uses: actions/checkout@master, matt-ball/newman-action@master
+        uses: matt-ball/newman-action@master
         with:
           collection: Component-testing.postman_collection.json
