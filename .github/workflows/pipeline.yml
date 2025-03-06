@@ -17,7 +17,17 @@ jobs:
     name: Test Backend Endpoints with Postman
     runs-on: ubuntu-latest
     steps:
-      - name: run postman tests
+      - name: setting java 17 up
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+      - name: setting gradle up
+        uses: gradle/actions/setup-gradle@v4
+      - name: building with gradle
+        run: ./gradlew build
+      - name: running with gradle
+        run: ./gradlew bootRun
+      - name: running postman tests
         uses: matt-ball/newman-action@master
         with:
           collection: https://github.com/Neslihan-Avsar/uek_223-gruppe-4-backend/blob/2bc16a1847e9826dcf78d522bd3baeeeb7c696b7/Component-testing.postman_collection.json
