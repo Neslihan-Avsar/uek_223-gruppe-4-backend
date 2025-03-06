@@ -1,11 +1,11 @@
-name: remote ssh command
+name: Remote SSH Test
 on: workflow_dispatch
 jobs:
-  build:
-    name: Build
+  hello-world:
+    name: Test SSH Connection
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using password
+      - name: executing remote ssh and echoing hello world
         uses: appleboy/ssh-action@v1.2.1
         with:
           host: ${{ secrets.HOST }}
@@ -13,3 +13,11 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 2222
           script: echo "Hello World!"
+  postman:
+    name: Test Backend Endpoints with Postman
+    runs-on: ubuntu-latest
+    steps:
+      - name: run postman tests
+        uses: actions/checkout@master, matt-ball/newman-action@master
+        with:
+          collection: Component-testing.postman_collection.json
