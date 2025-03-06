@@ -20,6 +20,7 @@ jobs:
       - name: setting java 17 up
         uses: actions/setup-java@v4
         with:
+          distribution: corretto
           java-version: 17
       - name: setting gradle up
         uses: gradle/actions/setup-gradle@v4
