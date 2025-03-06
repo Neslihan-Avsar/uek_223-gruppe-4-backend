@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: executing remote ssh commands using password
-        uses: Neslihan-Avsar/uek_223-gruppe-4-backend @ master
+        uses: Neslihan-Avsar/uek_223-gruppe-4-backend @ main
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
